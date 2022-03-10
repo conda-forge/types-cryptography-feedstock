@@ -1,5 +1,5 @@
 {% set name = "types-cryptography" %}
-{% set version = "3.3.15" %}
+{% set version = "3.3.17" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/types-cryptography-{{ version }}.tar.gz
-  sha256: a7983a75a7b88a18f88832008f0ef140b8d1097888ec1a0824ec8fb7e105273b
+  sha256: b62d2f31862c8443434197b1714a3e106dbf92d04806782b5ef4f17966b159b0
 
 build:
   number: 0
