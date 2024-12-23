@@ -7,24 +7,26 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/types-cryptography-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/types-cryptography-{{ version }}.tar.gz
   sha256: 09cc53f273dd4d8c29fa7ad11fefd9b734126d467960162397bc5e3e604dea75
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - types-enum34
     - types-ipaddress
 
 test:
+  requires:
+    - python {{ python_min }}
   commands:
     - test -f $SP_DIR/cryptography-stubs/__init__.pyi
 
